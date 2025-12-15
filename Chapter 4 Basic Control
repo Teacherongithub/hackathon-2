@@ -1,0 +1,29 @@
+ Basic Control, Integration, and Debugging
+
+Learning Goal (User Story 3 & 4): A student/developer will be able to implement basic ROS 2 robot control using provided examples, and understand how to integrate multiple ROS 2 nodes and debug common issues.
+
+4.1 Implementing Basic Robot Control
+
+The most fundamental task in robotics is controlling movement. Once the rclpy fundamentals are understood, the focus shifts to publishing data that affects the robot's physical state.
+
+For simple mobile movement, control is often achieved by publishing a geometry_msgs/Twist message to a designated velocity Topic. This message contains two vectors: linear velocity (how fast and what direction to move) and angular velocity (how fast to rotate).
+
+(ACTION FOR YOU: Insert a simple rclpy publisher code block here that publishes a constant Twist message to make a robot move forward. This directly addresses the goal of implementing basic control.)
+
+4.2 Integrating Multi-Node Systems
+
+A realistic humanoid robot system involves numerous Nodes working together. The successful integration of multiple ROS 2 nodes depends on strict adherence to Topic and Message standards:
+
+    1-Topic Consistency: Every component that needs a piece of data must subscribe to the exact Topic name being published. Misspellings are the most common integration error.
+    2-Message Type Agreement: The communicating Nodes must agree on the format of the data. For instance, an image processing Node must publish sensor_msgs/Image, and the computer vision algorithm must be prepared to receive data in that exact format.
+
+Understanding this integration structure allows developers to move toward real-world robot control problems.
+
+4.3 Debugging Common ROS 2 Issues
+
+Debugging is a required skill for any developer, especially when integrating multiple  
+ROS 2 nodes. When a system fails, the problem is often related to communication, not necessarily logic. Here are the core command-line tools for diagnosis:
+       
+       ros2 node list: Use this to verify that all necessary Nodes (sensor drivers, motor controllers, etc.) are actually running. If a Node is missing, the system will break.
+       ros2 topic info <topic_name>: Use this to check if a specific Topic is active and confirm that both a Publisher and a Subscriber are correctly connected to it.
+       ros2 topic echo <topic_name>: This tool allows you to inspect the data stream in real-time. If the data is flowing but is incorrect (e.g., publishing 0.0 when it should be 1.0), the problem lies in the Node's internal logic.
