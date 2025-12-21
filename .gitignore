@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dependencies
 /node_modules
 
@@ -18,3 +19,32 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+=======
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+
+# Docusaurus (assuming it might be set up at the project root later)
+build/
+.docusaurus/
+node_modules/
+yarn-error.log
+package-lock.json
+pnpm-lock.yaml
+
+# Universal
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/
+.env
+.env.*
+>>>>>>> fcc261e (Add Gemini and Specify project files)
