@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+langchain
+langchain-google-genai
+python-dotenv
+beautifulsoup4
+markdown
+faiss-cpu
+langchain_community
+langchain-experimental

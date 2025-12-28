@@ -1,0 +1,19 @@
+Introduction to The Robotic Nervous System
+
+ Welcome to the cutting edge of Physical AI & Humanoid Robotics! This textbook is tailored specifically for Robotics students and aims to provide a comprehensive foundation in the systems that bring complex robots to life. Crucially, we assume no prior robotics or ROS 2 experience, offering extensive foundational explanations for both topics. Our goal is to equip you with the knowledge to understand and implement basic robotic control systems.
+
+1.1 Overview of ROS 2: The Core Framework
+
+Robots are intricate machines, requiring a robust and distributed internal communication system—a "nervous system"—to coordinate their many functions, including sensing, actuation, and decision-making. The Robot Operating System 2 (ROS 2) is the core framework for robotics development that provides this critical middleware layer.
+
+ROS 2 manages complex data exchange by leveraging DDS (Data Distribution Service), which is the middleware underlying ROS 2 communication. DDS allows disparate software components to communicate reliably and efficiently, even if they are distributed across various processors or network locations. This capability is paramount in humanoid systems where components like vision processing, balancing algorithms, and motor controllers must synchronize their data in real-time.
+
+The project detailed in this book focuses on Module 1: The Robotic Nervous System (ROS 2).
+
+1.2 Why ROS 2 is Indispensable in Humanoid Robotics
+
+ROS 2's asynchronous and decentralized design is indispensable for Humanoid Robotics because it simplifies the integration of components that run at different frequencies and have varying data needs. For instance:
+High-Frequency Data: Joint position sensors (IMUs) must send data continuously via Topics for accurate balancing control.
+Low-Frequency Data: A power management system might only use a Service to check the battery status on demand.
+
+The framework also provides critical tools for visualization and debugging (like Rviz and RQT), which are essential when working with complex, multi-jointed robots. This textbook will provide a dedicated section on compatibility across major ROS 2 versions with specific examples to ensure your learning is relevant to current industry practices.
